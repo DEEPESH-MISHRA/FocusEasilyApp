@@ -1,0 +1,16 @@
+<template>
+    <template if:true={noisleeFiles.data}>
+        <div class="slds-scrollable_y">
+            <lightning-layout horizontal-align="center" multiple-rows>
+                <template for:each={noisleeFiles.data} for:item="noisleeFile">
+                    <lightning-layout-item key={noisleeFile.Id} padding="around-small" size="12" small-device-size="6"
+                        medium-device-size="4" large-device-size="3">
+                         <c-noislee-tile noislee-file-child={noisleeFile} selected-noislee-file-id={selectedNoisleeFileId} 
+                            onnoisleefileselect={updateSelectedTile}></c-noislee-tile>   
+                    </lightning-layout-item>
+                </template>
+            </lightning-layout>
+        </div>
+    </template>
+    
+</template>

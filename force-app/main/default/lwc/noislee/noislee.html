@@ -1,0 +1,53 @@
+<template>
+    <!-- Heading : Noislee Title and Logo -->
+    
+    <lightning-card >
+      <div class="slds-align_absolute-center slds-p-bottom_medium" >
+        <h3 slot="title"  style="color: rebeccapurple; font-size: 22px">
+          <lightning-icon
+            icon-name="utility:connected_apps"
+            
+            size="small"
+          ></lightning-icon>
+          Noislee
+        </h3>
+      </div>
+        <div class="list-last"></div>
+        
+        <!--  -->
+        <div class="list-last"></div>
+    <lightning-layout>
+      <lightning-layout-item size="12">
+        <lightning-card title="Select a Category">
+          <!-- New Noislee File button goes here -->
+         <lightning-button variant="brand-outline" label="New Noislee File" title="New Noislee File" slot ="actions" onclick={createNewNoisleeFile}>
+         </lightning-button>
+          <p class="slds-var-p-horizontal_small slds-align--absolute-center">
+                <!-- CategorySearchForm component goes here -->
+                <c-category-search-form onsearch={searchCategories}></c-category-search-form>  
+          </p>
+        </lightning-card>
+        <div class="list-last"></div>
+      </lightning-layout-item>
+    </lightning-layout>
+
+    <!-- Bottom -->
+    <lightning-layout>
+    <lightning-layout-item size="12" class="slds-p-top_small slds-is-relative">
+      <!-- Spinner goes here -->
+      <!-- <template if:true={isLoading}>
+          <lightning-spinner alternative-text="Loading" variant="brand">
+         </lightning-spinner> 
+         </template> -->
+      <!-- boatSearchResults goes here -->
+      <c-category-search-results onloading={handleLoading} ondoneloading={handleDoneLoading}></c-category-search-results>
+      <!-- onloading={handleLoading} ondoneloading={handleDoneLoading} -->
+    </lightning-layout-item>
+  </lightning-layout>
+
+  </lightning-card>
+
+
+
+
+</template>

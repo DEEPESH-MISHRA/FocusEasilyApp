@@ -1,0 +1,23 @@
+<template>
+    
+    <div onclick={selectNoisleeFile} class={tileClass}>
+        <div style={backgroundStyle} class="tile "></div>
+        <div class="lower-third">
+            <h1 style="font-size:14px;" class="slds-has-flexi-truncate slds-text-heading_medium slds-align_absolute-center">{noisleeFileChild.NoisleeFileRecord__r.Name}</h1>
+        </div>
+    </div>
+    <div>
+        <template if:true={showVolumeSlider}>
+            <lightning-slider
+                label="Volume"
+                step="10"
+                value="50"
+                min="0"
+                max="100"
+                onchange={handleVolumeChange}>
+            </lightning-slider>
+        </template>
+    
+    </div>
+
+</template>
